@@ -1,0 +1,22 @@
+﻿@model OgrBilgiSistemi.Models.EntitiyFramework.TblKulup
+@{
+    ViewBag.Title = "KulupGetir";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@using (Html.BeginForm("Guncelle", "Kulup", FormMethod.Post))
+{
+    <div>
+        @Html.LabelFor(m => m.KulupAd)
+        @Html.TextBoxFor(m => m.KulupAd, new { @class = "form-control" })
+    </div>
+    <div>
+        @Html.LabelFor(m => m.KulupKontenjan)
+        @Html.TextBoxFor(m => m.KulupKontenjan, new { @class = "form-control" })
+    </div>
+    @Html.HiddenFor(m => m.KulupId)
+    <div style="margin-top:15px">
+        <button class="btn btn-info">Güncelle</button>
+    </div>
+}
+

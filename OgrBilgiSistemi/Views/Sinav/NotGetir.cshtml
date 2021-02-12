@@ -1,0 +1,55 @@
+﻿@model OgrBilgiSistemi.Models.EntitiyFramework.TblNotlar
+@{
+    ViewBag.Title = "NotGetir";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@using (Html.BeginForm("Guncelle", "Sinav", FormMethod.Post))
+{
+
+    <div>
+        @Html.LabelFor(m => m.DersId)
+        @Html.TextBoxFor(m => m.DersId, new { @class = "form-control" })
+    </div>
+    <div>
+        @Html.LabelFor(m => m.OgrId)
+        @Html.TextBoxFor(m => m.OgrId, new { @class = "form-control" })
+    </div>
+    <div>
+        @Html.LabelFor(m => m.Sınav1)
+        @Html.TextBoxFor(m => m.Sınav1, new { @class = "form-control" })
+    </div>
+    <div>
+        @Html.LabelFor(m => m.Sınav2)
+        @Html.TextBoxFor(m => m.Sınav2, new { @class = "form-control" })
+    </div>
+    <div>
+        @Html.LabelFor(m => m.Sınav3)
+        @Html.TextBoxFor(m => m.Sınav3, new { @class = "form-control" })
+    </div>
+    <div>
+        @Html.LabelFor(m => m.Proje)
+        @Html.TextBoxFor(m => m.Proje, new { @class = "form-control" })
+    </div>
+    <div>
+        @Html.LabelFor(m => m.Ortalama)
+        @Html.TextBoxFor(m => m.Ortalama, new {  @class = "form-control" })
+    </div>
+    <div>
+        @Html.LabelFor(m => m.Durum)
+        @Html.TextBoxFor(m => m.Durum, new { @class = "form-control" })
+    </div>
+    @Html.HiddenFor(m => m.NotId)
+    <div style="margin-top:10px">
+        <button type="submit" name="islem" value="Hesapla" class="btn btn-default">
+            Hesapla
+        </button>
+        <br /> <br />
+        <button type="submit" name="islem" value="Guncelle1" class="btn btn-success">
+            Güncelle
+        </button>
+        Sonuç=@ViewBag.ort
+    </div>
+
+}
+

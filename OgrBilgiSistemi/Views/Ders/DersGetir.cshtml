@@ -1,0 +1,17 @@
+﻿@model OgrBilgiSistemi.Models.EntitiyFramework.tblDers
+@{
+    ViewBag.Title = "DersGetir";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@using (Html.BeginForm("Guncelle", "Ders", FormMethod.Post))
+{
+    <div>
+        @Html.LabelFor(n => n.DersAd)
+        @Html.TextBoxFor(n => n.DersAd, new { @class = "form-control" })
+    </div>
+    @Html.HiddenFor(n => n.DersId)
+    <div style="margin-top:15px">
+        <button class="btn btn-info">Güncelle</button>
+    </div>
+}
+

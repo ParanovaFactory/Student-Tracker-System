@@ -1,0 +1,39 @@
+﻿@using OgrBilgiSistemi.Models.EntitiyFramework;
+@model List<TblNotlar>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<table class="table table-bordered">
+    <tr>
+        <th>Ders Id</th>
+        <th>Öğrenci Id</th>
+        <th>Sınav 1</th>
+        <th>Sınav 2</th>
+        <th>Sınav 3</th>
+        <th>Porje</th>
+        <th>Ortalama</th>
+        <th>Durum</th>
+        <th>İşlemler</th>
+    </tr>
+    <tbody>
+        @foreach (var snv in Model)
+        {
+            <tr>
+                <td>@snv.DersId</td>
+                <td>@snv.TblOgrenciler.OgrAd</td>
+                <td>@snv.Sınav1</td>
+                <td>@snv.Sınav2</td>
+                <td>@snv.Sınav3</td>
+                <td>@snv.Proje</td>
+                <td>@snv.Ortalama</td>
+                <td>@snv.Durum</td>
+                <td><a href="/Sinav/NotGetir/@snv.NotId" class="btn btn-success">Güncelle</a></td>
+            </tr>
+        }
+    </tbody>
+</table>
+<a href="/Sinav/YeniSinav" class="btn btn-primary">Yeni Not Kaydı</a>
+
+

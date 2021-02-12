@@ -1,0 +1,80 @@
+﻿@model OgrBilgiSistemi.Models.EntitiyFramework.TblOgrenciler
+@{
+    ViewBag.Title = "YeniOgr";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<form method="post" class="form-group">
+    <div>
+        <label>Öğrenci Adı</label>
+        <input type="text" class="form-control" name="OgrAd" />
+    </div>
+    <div style="margin-top:10px">
+        <label>Öğrenci Soyadı</label>
+        <input type="text" class="form-control" name="OgrSoyad" />
+    </div>
+    <div style="margin-top:10px">
+        <label>Öğrenci Fotoğraf</label>
+        <input type="text" class="form-control" name="OgrFotoğraf" />
+    </div>
+    <div style="margin-top:10px">
+        <label>Öğrenci Cinsiyet</label>
+        <input type="text" class="form-control" name="OgrCinciyet" />
+    </div>
+    <div style="margin-top:10px">
+        <label>Öğrenci Kulüp</label>
+        @Html.DropDownListFor(m=>m.TblKulup.KulupId,(List<SelectListItem>)ViewBag.dgr,new { @class="from-control"})
+    </div>
+    <div style="margin-top:10px">
+        <button class="btn btn-info">Öğrenci Ekle</button>
+    </div>
+</form>
+@*DropDownList Kullanım Şekilleri*@
+
+@*<form action="/Home/CategoryChosen" method="get">
+
+        <fieldset>
+            Movie Type <select id="MovieType" name="MovieType">
+
+                <option value=""></option>
+
+                <option value="0">Action</option>
+
+                <option value="1">Drama</option>
+
+                <option selected="selected" value="2">Comedy</option>
+
+                <option value="3">Science Fiction</option>
+
+            </select>
+
+            <p><input type="submit" value="Submit" /> </p>
+
+        </fieldset>
+
+    </form>*@
+
+
+
+
+@*@Html.DropDownList("Cinsiyet",
+    new[]
+    {
+        new SelectListItem() {Value="1",Text="Erkek"},
+        new SelectListItem() {Value="2",Text="Kız"},
+    }, "Cinsiyet Seçiniz", new { @class = "form-control" })*@
+
+
+@*
+    Controller üzerinden ekleme yöntemi    
+*@
+
+@*<div>
+
+   @Html.DropDownList("DersAd",null,"Ders Seçin",new { @class = "form-control"})
+
+</div>
+
+}*@
+
+

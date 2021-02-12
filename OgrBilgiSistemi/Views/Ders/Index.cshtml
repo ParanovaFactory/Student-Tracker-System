@@ -1,0 +1,27 @@
+﻿@using OgrBilgiSistemi.Models.EntitiyFramework;
+@model List<tblDers>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<table class="table table-bordered">
+    <tr>
+        <th>Ders Id</th>
+        <th>Ders Adı</th>
+        <th>İşlemler</th>
+    </tr>
+    <tbody>
+        @foreach(var drs in Model)
+        {
+            <tr>
+                <td>@drs.DersId</td>
+                <td>@drs.DersAd</td>
+                <td><a href="/Ders/Sil/@drs.DersId"class="btn btn-danger">Sil</a>
+                <a href="/Ders/DersGetir/@drs.DersId"class="btn btn-success">Güncelle</a>
+            </tr>
+        }
+    </tbody>
+</table>
+<a href="/Ders/YeniDers"class="btn btn-primary">Yeni Ders Kaydı</a>
+

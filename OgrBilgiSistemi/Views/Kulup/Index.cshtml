@@ -1,0 +1,30 @@
+﻿@using OgrBilgiSistemi.Models.EntitiyFramework;
+@model List<TblKulup>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<table class="table table-bordered">
+    <tr>
+        <th>Kulüp Id</th>
+        <th>Kulüp Adı</th>
+        <th>Kulüp Kontenjanı</th>
+        <th>İşlemler</th>
+    </tr>
+    <tbody>
+        @foreach (var klp in Model)
+        {
+            <tr>
+                <td>@klp.KulupId</td>
+                <td>@klp.KulupAd</td>
+                <td>@klp.KulupKontenjan</td>
+                <td><a href="/Kulup/Sil/@klp.KulupId" class="btn btn-danger">Sil</a>
+                <a href="/Kulup/KulupGetir/@klp.KulupId" class="btn btn-success">Güncelle</a></td>
+            </tr>
+        }
+    </tbody>
+</table>
+<a href="/Kulup/YeniKulup" class="btn btn-primary">Yeni Kulüp Kaydı</a>
+
+

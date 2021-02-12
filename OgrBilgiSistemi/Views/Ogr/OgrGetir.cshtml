@@ -1,0 +1,36 @@
+﻿@model OgrBilgiSistemi.Models.EntitiyFramework.TblOgrenciler
+@{
+    ViewBag.Title = "OgrGetir";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@using (Html.BeginForm("Guncelle", "Ogr", FormMethod.Post))
+{
+<div>
+    @Html.LabelFor(m => m.OgrAd)
+    @Html.TextBoxFor(m => m.OgrAd, new { @class = "form-control" })
+</div>
+<div>
+    @Html.LabelFor(m => m.OgrSoyad)
+    @Html.TextBoxFor(m => m.OgrSoyad, new { @class = "form-control" })
+</div>
+<div>
+    @Html.LabelFor(m => m.OgrFotoğraf)
+    @Html.TextBoxFor(m => m.OgrFotoğraf, new { @class = "form-control" })
+</div>
+<div>
+    @Html.LabelFor(m => m.OgrCinciyet)
+    @Html.TextBoxFor(m => m.OgrCinciyet, new { @class = "form-control" })
+</div>
+<div>
+    @Html.LabelFor(m => m.OgrKulup)
+    @Html.TextBoxFor(m => m.OgrKulup, new { @class = "form-control" })
+    @*@Html.DropDownListFor(m => m.TblKulup.KulupId, (List<SelectListItem>)ViewBag.dgr, new { @class = "from-control" })*@
+
+</div>
+    @Html.HiddenFor(m => m.OgrId)
+    <div style="margin-top:15px">
+        <button class="btn btn-info">Güncelle</button>
+    </div>
+}
+
